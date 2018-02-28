@@ -14,9 +14,19 @@ export class DataBindingComponent implements OnInit {
   getValor() {
     return 5;
   }
+
   getCurtirCurso() {
     return true;
   }
+
+  botaoClicado() {
+    alert('botao clicado!');
+  }
+
+  onKeyUp(evento) {
+    console.log(evento);
+  }
+
   constructor() { }
 
   ngOnInit() {
