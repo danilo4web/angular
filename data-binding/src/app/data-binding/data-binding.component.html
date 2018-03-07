@@ -1,3 +1,37 @@
+
+<app-meu-form></app-meu-form>
+
+<section class="property-binding">
+    <article>
+      <h3> Two Way Data Binding </h3>
+      <div>
+          <input type="text"
+            [value]="nome"
+            (input)="nome = $event.target.value"
+          >
+
+          <input type="text"
+            [ngModel]="nome"
+            (ngModelChange)="nome = $event"
+          >
+
+          <input type="text" [(ngModel)]="nome">
+
+          <p>Voce digitou o nome: {{ nome }}</p>
+      </div>
+
+      <div>
+          <input type="text" [(ngModel)]="pessoa.nome">
+          <input type="text" [(ngModel)]="pessoa.idade">
+
+          <p>{{ pessoa.nome }} tem {{ pessoa.idade }} anos de idade!</p>
+      </div>
+
+    </article>
+</section>
+
+<hr />
+
 <section class="property-binding">
     <article>
         <h3>Interpolação!</h3>
@@ -7,12 +41,17 @@
         <p>Curso Angular é bom: {{ cursoAngular && getCurtirCurso() }}</p>
     </article>
 
+    <!--
     <article>
         <h3> Property Binding </h3>
         <img src="{{ urlImagem }}" />
         <img [src]="urlImagem" />
     </article>
+    -->
+</section>
+<hr />
 
+<section class="property-binding">
     <article>
         <h3>Selecione uma classe</h3>
         <div>
@@ -43,6 +82,9 @@
         </div>
     </article>
 
+  </section>
+  <hr />
+  <section class="property-binding">
     <article>
         <h3> Event Binding </h3>
         <div>
@@ -50,9 +92,37 @@
         </div>
         <br /><br />
         <div>
-            <input type="text" (keyup)="onKeyUp($event);" />
+            <input #campoInput type="text"
+              (keyup)="onKeyUp($event);"
+              (keyup.enter)="salvarValor(campoInput.value)"
+              (blur)="salvarBlur($event.target.value)" />
+
+            <br /><br />
+            Valor Atual: {{ valorAtual }}<br />
+            Valor Salvo: {{ valorSalvo }}<br />
+            Valor Blur: {{ valorBlur }}<br />
+
+            Valor Clicado: {{ valorClicado }}<br />
+
+            <button (click)="salvarClicado(campoInput.value)" class="btn btn-primary">Me clique!</button>
         </div>
         <br /><br />
+
+        <span
+          (mouseover)="onmouseover();"
+          (mouseout)="onmouseout()"
+          [style.cursor] = "(isMouseOver == true) ? 'pointer' : 'normal'"
+          [class] = "(isMouseOver == true) ? 'highlight' : ''"
+        >Passe o mouse sobre mim</span>
+
+        <br />
+        <strong
+          [style.display] = "(isMouseOver == true) ? 'block' : 'none'"
+        >Mouse esta em cima!</strong>
+
+        <br />
+        <br />
+        <br />
 
     </article>
 </section>
