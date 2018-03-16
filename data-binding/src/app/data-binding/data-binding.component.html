@@ -1,5 +1,16 @@
 
-<app-meu-form></app-meu-form>
+<section class="input-output-properties">
+  <article>
+    <h3>Input/Output Properties</h3>
+
+    <app-curso></app-curso>
+  </article>
+
+</section>
+
+
+
+<!--<app-meu-form></app-meu-form>-->
 
 <section class="property-binding">
     <article>
@@ -17,7 +28,7 @@
 
           <input type="text" [(ngModel)]="nome">
 
-          <p>Voce digitou o nome: {{ nome }}</p>
+          <p>Voce digitou o nome: {{ nome | uppercase }}</p>
       </div>
 
       <div>
@@ -101,7 +112,6 @@
             Valor Atual: {{ valorAtual }}<br />
             Valor Salvo: {{ valorSalvo }}<br />
             Valor Blur: {{ valorBlur }}<br />
-
             Valor Clicado: {{ valorClicado }}<br />
 
             <button (click)="salvarClicado(campoInput.value)" class="btn btn-primary">Me clique!</button>

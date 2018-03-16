@@ -17,6 +17,7 @@ export class DataBindingComponent implements OnInit {
   valorAtual: string = '';
   valorSalvo: string = '';
   valorBlur: string = '';
+  valorClicado: string = '';
 
   isMouseOver = false;
 
