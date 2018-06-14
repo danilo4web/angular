@@ -15,7 +15,6 @@ import { MEAT_API } from '../app.api'
 import { ErrorHandler } from '../app.error-handler'
 
 
-
 @Injectable()
 export class RestaurantsService {
 
@@ -44,4 +43,6 @@ export class RestaurantsService {
             .map(response => response.json())
             .catch(ErrorHandler.handlerError)        
     }
+
+
 }

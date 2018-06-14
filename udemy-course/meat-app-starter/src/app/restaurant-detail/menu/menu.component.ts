@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
   menu: Observable<MenuItem[]>
 
   constructor(private restaurantsService: RestaurantsService,
-    private route: ActivatedRoute) { }
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.menu = this.restaurantsService
