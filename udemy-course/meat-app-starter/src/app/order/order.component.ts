@@ -27,7 +27,7 @@ export class OrderComponent implements OnInit {
     return this.orderService.itemsValue()
   }
 
-  cartItems() {
+  cartItems(): CartItem[] {
     return this.orderService.cartItems()
   }
 
