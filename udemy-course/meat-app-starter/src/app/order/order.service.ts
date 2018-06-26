@@ -31,12 +31,12 @@ export  class OrderService {
         this.cartService.decreaseQty(item)
     }   
     
-  remove(item: CartItem){
-    this.cartService.removeItem(item)
-  }
+    remove(item: CartItem){
+        this.cartService.removeItem(item)
+    }
 
     clear() {
-        this.cartService.clear()
+        // this.cartService.clear()
     }
 
   checkOrder(order: Order): Observable<string> {

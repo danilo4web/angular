@@ -11,7 +11,7 @@ export class RatingComponent implements OnInit {
   rates: number[] = [1,2,3,4,5]
   rate: number = 0
 
-  priviousRate: number
+  previousRate: number
 
   constructor() { }
 
@@ -20,22 +20,22 @@ export class RatingComponent implements OnInit {
 
   setRate(r: number) {
     this.rate = r
-    this.priviousRate = undefined
+    this.previousRate = undefined
     this.rated.emit(this.rate)
   }
 
-  setTemporaryRate(r: number) {
-    if(this.priviousRate === undefined) {
-      this.priviousRate = this.rate
+  setTemporaryRate(r: number){
+    if (this.previousRate === undefined){
+      this.previousRate = this.rate
     }
 
     this.rate = r
   }
 
-  clearTemporaryRate() {
-    if(this.priviousRate !== undefined) {
-      this.rate = this.priviousRate
-      this.priviousRate = undefined
+  clearTemporaryRate(){
+    if (this.previousRate !== undefined){
+      this.rate = this.previousRate
+      this.previousRate = undefined
     }
   }
 

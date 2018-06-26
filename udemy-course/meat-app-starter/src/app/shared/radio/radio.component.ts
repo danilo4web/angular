@@ -14,14 +14,13 @@ import {RadioOption} from './radio-option.model'
     }
   ]
 })
-export class RadioComponent implements OnInit, ControlValueAccessor {
+export class RadioComponent implements OnInit {
 
   @Input() options: RadioOption[]
 
   value: any
+  onChange: any;
 
-  onChange: any
-  
   constructor() { }
 
   ngOnInit() {
@@ -46,15 +45,12 @@ export class RadioComponent implements OnInit, ControlValueAccessor {
   }
   /**
    * Set the function to be called when the control receives a touch event.
-   * (Entrou no componente)
    */
   registerOnTouched(fn: any): void {}
   /**
    * This function is called when the control status changes to or from "DISABLED".
    * Depending on the value, it will enable or disable the appropriate DOM element.
    *
-   * ()
-   * 
    * @param isDisabled
    */
   setDisabledState?(isDisabled: boolean): void {}
