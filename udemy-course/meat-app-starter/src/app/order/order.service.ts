@@ -36,7 +36,7 @@ export  class OrderService {
     }
 
     clear() {
-        // this.cartService.clear()
+        this.cartService.clear()
     }
 
   checkOrder(order: Order): Observable<string> {

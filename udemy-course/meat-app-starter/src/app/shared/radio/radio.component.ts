@@ -20,7 +20,7 @@ export class RadioComponent implements OnInit {
 
   value: any
   onChange: any;
-
+  
   constructor() { }
 
   ngOnInit() {
@@ -28,7 +28,7 @@ export class RadioComponent implements OnInit {
 
   setValue(value: any){
     this.value = value
-    this.onChange(this.value)
+    // this.onChange(this.value)
   }
 
   /**

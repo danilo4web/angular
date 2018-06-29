@@ -6,12 +6,12 @@ import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail
 import { MenuComponent } from "./restaurant-detail/menu/menu.component";
 import { ReviewsComponent } from "./restaurant-detail/reviews/reviews.component";
 import { OrderSummaryComponent } from "./order-summary/order-summary.component";
-import {NotFoundComponent} from './not-found/not-found.component'
+import  {NotFoundComponent } from './not-found/not-found.component'
 
 export const ROUTES: Routes = [
   {path: '', component: HomeComponent},
   {path: 'restaurants', component: RestaurantsComponent},
-  {path: 'restaurant/:id', component: RestaurantDetailComponent, 
+  {path: 'restaurants/:id', component: RestaurantDetailComponent, 
       children: [
           {path: '', redirectTo: 'menu', pathMatch: 'full'},
           {path: 'menu', component: MenuComponent},
