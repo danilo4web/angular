@@ -7,8 +7,11 @@ import { OrderComponent } from './order.component'
 import { OrderItemsComponent } from './order-items/order-items.component'
 import { DeliveryCostsComponent } from './delivery-costs/delivery-costs.component'
 
+import { LeaveOrderGuard } from './leave-order.guard'
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
 const ROUTES: Routes = [
-    {path: '', component: OrderComponent}
+    {path: '', component: OrderComponent, canDeactivate: [LeaveOrderGuard]}
 ]
 
 @NgModule({
@@ -17,3 +20,9 @@ const ROUTES: Routes = [
 })
 
 export class OrderModule {}
+
+
+
+
+
+
