@@ -1,4 +1,3 @@
-
 import { Request, Response } from 'express'
 import { User, users } from './users'
 
@@ -7,9 +6,10 @@ import { apiConfig } from './api-config'
 
 export const handleAuthentication = (req: Request, resp: Response) => {
     const user: User = req.body
-
+  
     if(isValid(user)) {
 
+        // query
         const dbUser = users[user.email]
         const token = jwt.sign({sub: dbUser.email, iss: 'meat-api'}, apiConfig.secret)
         resp.json({name: dbUser.name, email: dbUser.email, accessToken: token})

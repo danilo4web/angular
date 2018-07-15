@@ -6,6 +6,7 @@ var api_config_1 = require("./api-config");
 exports.handleAuthentication = function (req, resp) {
     var user = req.body;
     if (isValid(user)) {
+        // query
         var dbUser = users_1.users[user.email];
         var token = jwt.sign({ sub: dbUser.email, iss: 'meat-api' }, api_config_1.apiConfig.secret);
         resp.json({ name: dbUser.name, email: dbUser.email, accessToken: token });
